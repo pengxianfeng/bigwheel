@@ -1,0 +1,7 @@
+.buildpath
+.project
+.idea
+growth.iml
+.settings
+*.log.*
+.DS_Store

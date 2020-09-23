@@ -8,7 +8,7 @@ $(function (){
 //	var	platform = parm.split("=")[1].split("&")[0];
 //	var	userToken =  parm.split("=")[2].split("&")[0];
 	
-	var platform = 'ios';
+	var platform = 'android';
 	var userToken = 'sssssssssssssssss';
 	var bRotate = false;
 	//获取token
@@ -181,7 +181,8 @@ $(function (){
 		//alert("调接口前！");
 		try{ 
 		Get(WHEEL,'',function(data){
-			//alert("接口回调==" + JSON.stringify(data));
+			// alert("接口回调==" + JSON.stringify(data));
+			console.log(data.ErrorCode);
 			if (data.ErrorCode == 0) {
 				item = data.data.resultId;
 			}else if(data.ErrorCode == 100304){
@@ -190,7 +191,6 @@ $(function (){
 				$('.tip').text('没有转动大转盘的机会了');
 				return false;
 			}
-			console.log('item==' + item);
 			switch (item) {
 				case 0:
 					rotateFn(0, 113, '还差一点点就抽到了哦&sim;');
